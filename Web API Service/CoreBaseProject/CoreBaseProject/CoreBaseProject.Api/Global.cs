@@ -1,0 +1,23 @@
+﻿global using CoreBaseProject.Shared.Base;
+global using Microsoft.AspNetCore.Mvc;
+global using CoreBaseProject.Api.AuthorizeExtensions;
+global using CoreBaseProject.Shared.EnumConfiguration;
+global using CoreBaseProject.Shared.Pagination;
+global using CoreBaseProject.Model.Models.MasterSettings;
+global using CoreBaseProject.Repository.Contracts.MasterSettings;
+global using CoreBaseProject.Repository.Contracts.MasterSettings.AccressControl;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Mvc.Filters;
+global using System.Security.Claims;
+global using CoreBaseProject.Shared.Models;
+global using Microsoft.AspNetCore.Authorization;
+
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.Customer.CustomerLogic.Command;
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.Customer.CustomerLogic.Model;
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.Customer.CustomerLogic.Queries;
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.AccessControl.ActionLogic.Command;
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.AccessControl.ActionLogic.Model;
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.AccessControl.ActionLogic.Queries;
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.AccessControl.FeatureActionMapping.Command;
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.AccessControl.FeatureActionMapping.Model;
+global using CoreBaseProject.Application.ApplicationLogic.MasterSettings.AccessControl.FeatureActionMapping.Queries;

@@ -1,0 +1,6 @@
+@CoreBaseProject.Api_HostAddress = http://localhost:5098
+
+GET {{CoreBaseProject.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
