@@ -4,7 +4,7 @@ using CoreBaseProject.Repository.Base;
 using CoreBaseProject.Repository.Contracts.MasterSettings.ReportAccessControl;
 using Microsoft.EntityFrameworkCore;
 
-namespace SadaqaAccounting.Repository.Repository.MasterSettings.ReportAccessControl
+namespace CoreBaseProject.Repository.Repository.MasterSettings.ReportAccessControl
 {
     public class ReportUserAccessRepository : BaseRepository<ReportUserAccess>, IReportUserAccessRepository
     {

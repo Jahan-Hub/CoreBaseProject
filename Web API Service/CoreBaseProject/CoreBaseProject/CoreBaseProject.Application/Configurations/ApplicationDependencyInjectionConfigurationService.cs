@@ -13,8 +13,8 @@ using CoreBaseProject.Repository.Contracts.MasterSettings.ReportAccessControl;
 using CoreBaseProject.Repository.Repository.MasterSettings;
 using CoreBaseProject.Repository.Repository.MasterSettings.AccessControl;
 using CoreBaseProject.Repository.Repository.MasterSettings.Enum;
+using CoreBaseProject.Repository.Repository.MasterSettings.ReportAccessControl;
 using Microsoft.Extensions.DependencyInjection;
-using SadaqaAccounting.Repository.Repository.MasterSettings.ReportAccessControl;
 using System.Reflection;
 
 namespace CoreBaseProject.Application.Configurations

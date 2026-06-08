@@ -11,6 +11,9 @@ builder.Services.AddControllers();
 //Add Application Services
 builder.Services.AddApplicationService();
 
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
 // Add identity handler services and configure identity services
 builder.Services.AddSwaggerExplorer()
     .InjectDbContext(builder.Configuration)
@@ -19,7 +22,7 @@ builder.Services.AddSwaggerExplorer()
     .AddIdentityAuth(builder.Configuration);
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+//builder.Services.AddOpenApi();
 
 builder.Services.Configure<AppSettings>(builder.Configuration.GetSection("AppSettings"));
 

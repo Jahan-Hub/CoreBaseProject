@@ -6,7 +6,7 @@ using CoreBaseProject.Shared.Models;
 using Microsoft.EntityFrameworkCore;
 using static CoreBaseProject.Shared.EnumConfiguration.BaseEnumCollection;
 
-namespace SadaqaAccounting.Repository.Repository.MasterSettings.ReportAccessControl
+namespace CoreBaseProject.Repository.Repository.MasterSettings.ReportAccessControl
 {
     public class ReportRegistryRepository : BaseRepository<ReportRegistry>, IReportRegistryRepository
     {
