@@ -1,0 +1,71 @@
+﻿@page "/customers"
+@inject BlazorApp1.Services.CustomerService CustomerService
+
+<h3>Customers</h3>
+
+<button class="btn btn-primary" @onclick="NewCustomer">New</button>
+
+@if (customers is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr><th>First</th><th>Last</th><th>Email</th><th>DOB</th><th></th></tr>
+        </thead>
+        <tbody>
+            @foreach (var c in customers)
+            {
+                <tr>
+                    <td>@c.FirstName</td>
+                    <td>@c.LastName</td>
+                    <td>@c.Email</td>
+                    <td>@c.DateOfBirth.ToString("yyyy-MM-dd")</td>
+                    <td>
+                        <button class="btn btn-sm btn-secondary" @onclick="() => Edit(c.Id)">Edit</button>
+                        <button class="btn btn-sm btn-danger" @onclick="() => Delete(c.Id)">Delete</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private IEnumerable<Core.Entities.Customer>? customers;
+
+    protected override async Task OnInitializedAsync()
+    {
+        customers = await CustomerService.GetAllAsync();
+    }
+
+    private async Task NewCustomer()
+    {
+        var c = new Core.Entities.Customer
+        {
+            FirstName = "New",
+            LastName = "Customer",
+            Email = "new@example.com",
+            DateOfBirth = DateOnly.FromDateTime(DateTime.UtcNow.AddYears(-30))
+        };
+        await CustomerService.AddAsync(c);
+        customers = await CustomerService.GetAllAsync();
+    }
+
+    private async Task Edit(Guid id)
+    {
+        var c = await CustomerService.GetByIdAsync(id);
+        if (c is null) return;
+        c.FirstName += " (edited)";
+        await CustomerService.UpdateAsync(c);
+        customers = await CustomerService.GetAllAsync();
+    }
+
+    private async Task Delete(Guid id)
+    {
+        await CustomerService.DeleteAsync(id);
+        customers = await CustomerService.GetAllAsync();
+    }
+}
